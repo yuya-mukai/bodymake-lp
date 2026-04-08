@@ -77,12 +77,45 @@
     /* ===== 緊急バー ===== */
     .urgency-bar {
       background: var(--red);
-      padding: 10px 20px;
+      padding: 12px 20px;
       text-align: center;
       font-size: 13px; font-weight: 700;
       letter-spacing: .3px;
+      line-height: 1.6;
     }
-    .urgency-bar em { font-style: normal; font-size: 15px; }
+    .urgency-bar em { font-style: normal; font-size: 16px; }
+    .urgency-countdown {
+      font-size: 18px; font-weight: 900; letter-spacing: 1px;
+      display: inline-block; margin: 0 4px;
+      background: rgba(255,255,255,.2); border-radius: 4px;
+      padding: 1px 8px;
+    }
+
+    /* ===== 閲覧中インジケータ ===== */
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(229,57,53,.12);
+      border: 1px solid rgba(229,57,53,.35);
+      border-radius: 20px; padding: 4px 14px;
+      font-size: 12px; font-weight: 700; color: #ff6b6b;
+      margin-bottom: 20px;
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #ff4444;
+      animation: livepulse 1.4s infinite;
+    }
+    @keyframes livepulse {
+      0%,100%{ opacity:1; transform:scale(1); }
+      50%{ opacity:.4; transform:scale(1.4); }
+    }
+
+    /* ===== CTAパルス ===== */
+    @keyframes ctapulse {
+      0%,100%{ box-shadow: 0 8px 32px rgba(6,199,85,.35); }
+      50%{ box-shadow: 0 8px 48px rgba(6,199,85,.65), 0 0 0 6px rgba(6,199,85,.12); }
+    }
+    .btn-line { animation: ctapulse 2.5s infinite; }
 
     /* ===== HERO ===== */
     .hero {
@@ -301,12 +334,10 @@
       margin-bottom: 24px;
     }
     .coach-avatar {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: var(--gd);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 32px; font-weight: 900; color: #111;
-      flex-shrink: 0;
-      border: 2px solid rgba(201,169,110,.4);
+      width: 90px; height: 90px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      border: 3px solid rgba(201,169,110,.5);
+      box-shadow: 0 0 0 4px rgba(201,169,110,.10);
     }
     .coach-name { font-size: 18px; font-weight: 900; color: var(--wh); margin-bottom: 4px; }
     .coach-role { font-size: 12px; color: var(--g); font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 10px; }
@@ -411,10 +442,14 @@
   </nav>
 
   <!-- ===== 緊急バー ===== -->
-  <div class="urgency-bar">⚠ 特典配布・無料セッション受付は<em>今月末</em>まで ／ 残り枠 <em>数名</em></div>
+  <div class="urgency-bar">
+    ⚠ 無料セッション受付終了まで残り <span class="urgency-countdown" id="countdown-days">--</span>日
+    <span id="countdown-hm"></span> ／ 今月の受付枠 <em>残りわずか</em>
+  </div>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
+    <div class="live-badge"><span class="live-dot"></span>今まさに<span id="live-count">7</span>名が閲覧中</div>
     <span class="hero-tag">Special Tokuten</span>
     <h1 class="hero-h1">
       LINE登録ありがとうございます
@@ -427,12 +462,12 @@
     </p>
     <div class="hero-value-box">
       <span class="hero-value-label">総額</span>
-      <span class="hero-value-num">¥21,400</span>
+      <span class="hero-value-num">¥69,400</span>
       <span class="hero-value-note">相当を無料プレゼント</span>
     </div>
     <a href="https://vd-official.com/?page_id=442" class="btn-line">
       今すぐ無料セッションを予約する
-      <small>→ 特典受取 ＋ 無料Zoom30分</small>
+      <small>→ 特典受取 ＋ 無料Zoom 60〜90分</small>
     </a>
   </section>
   <hr class="rule">
@@ -461,7 +496,7 @@
           <span class="bonus-num">Bonus 01</span>
           <h3 class="bonus-title">挫折しない3ヶ月<br>ボディメイク完全ロードマップ</h3>
           <div class="bonus-price">
-            <span class="bonus-price-orig">通常 ¥9,800</span>
+            <span class="bonus-price-orig">通常 ¥29,800</span>
             <span class="bonus-price-free">→ 無料</span>
           </div>
         </div>
@@ -489,7 +524,7 @@
           <span class="bonus-num">Bonus 02</span>
           <h3 class="bonus-title">4タイプ別<br>挫折パターン脱出シート</h3>
           <div class="bonus-price">
-            <span class="bonus-price-orig">通常 ¥7,800</span>
+            <span class="bonus-price-orig">通常 ¥24,800</span>
             <span class="bonus-price-free">→ 無料</span>
           </div>
         </div>
@@ -517,7 +552,7 @@
           <span class="bonus-num">Bonus 03</span>
           <h3 class="bonus-title">ズボラでも続く<br>食事管理テンプレート（7日分）</h3>
           <div class="bonus-price">
-            <span class="bonus-price-orig">通常 ¥3,800</span>
+            <span class="bonus-price-orig">通常 ¥14,800</span>
             <span class="bonus-price-free">→ 無料</span>
           </div>
         </div>
@@ -546,20 +581,20 @@
         <div class="total-items">
           <div class="total-item">
             <span class="total-item-name">【特典①】3ヶ月ボディメイクロードマップ</span>
-            <span class="total-item-price">¥9,800</span>
+            <span class="total-item-price">¥29,800</span>
           </div>
           <div class="total-item">
             <span class="total-item-name">【特典②】4タイプ別挫折脱出シート</span>
-            <span class="total-item-price">¥7,800</span>
+            <span class="total-item-price">¥24,800</span>
           </div>
           <div class="total-item">
             <span class="total-item-name">【特典③】7日分食事管理テンプレート</span>
-            <span class="total-item-price">¥3,800</span>
+            <span class="total-item-price">¥14,800</span>
           </div>
         </div>
         <div class="total-sum">
           <span class="total-sum-label">通常合計</span>
-          <span class="total-sum-orig">¥21,400</span>
+          <span class="total-sum-orig">¥69,400</span>
           <span class="total-sum-free">→ 完全無料</span>
           <span class="total-sum-note">※ LINE登録者限定・今月末まで</span>
         </div>
@@ -573,7 +608,7 @@
     <div class="wrap">
       <span class="label">Additional Bonus</span>
       <h2 class="h2"><em>追加特典</em>：<br>無料ロードマップ作成セッション</h2>
-      <p class="lead" style="margin-bottom:28px">上記3つの特典に加え、今だけ「あなた専用のロードマップ作成セッション（Zoom・30〜60分）」も無料でご提供します。</p>
+      <p class="lead" style="margin-bottom:28px">上記3つの特典に加え、今だけ「あなた専用のロードマップ作成セッション（Zoom・60〜90分）」も無料でご提供します。</p>
       <div class="session-box">
         <span class="session-badge">Limited Free Session</span>
         <h3 class="session-title">
@@ -597,25 +632,25 @@
           <li class="session-feat">
             <span class="session-feat-num">3</span>
             <div class="session-feat-body">
-              <strong>最初の1週間アクション（10分）</strong>
+              <strong>最初の1週間アクション（15分）</strong>
               <span>セッション翌日から動けるレベルまで具体化してお渡し</span>
             </div>
           </li>
           <li class="session-feat">
             <span class="session-feat-num">4</span>
             <div class="session-feat-body">
-              <strong>強引な営業は一切なし</strong>
-              <span>断れない空気は作りません。変化をサポートしたいだけです</span>
+              <strong>質疑応答タイム（〜30分）</strong>
+              <span>食事・トレーニング・生活習慣など、気になることを何でも聞ける時間</span>
             </div>
           </li>
         </ul>
         <div class="deadline-box">
-          <strong>⏰ 申込受付：今月末まで</strong>
+          <strong>⏰ 受付終了まで残り <span id="countdown-days2">--</span>日</strong>
           今月の枠は残りわずかです。定員に達し次第、受付を終了します。
         </div>
         <a href="https://vd-official.com/?page_id=442" class="btn-line">
           無料セッションを予約する（残り数名）
-          <small>Zoom / 30〜60分 / 完全無料</small>
+          <small>Zoom / 60〜90分 / 完全無料</small>
         </a>
       </div>
     </div>
@@ -628,29 +663,31 @@
       <span class="label">About Coach</span>
       <h2 class="h2">担当コーチ<em>について</em></h2>
       <div class="coach-card">
-        <div class="coach-avatar">Y</div>
+        <!-- ↓ GitHubリポジトリに coach.jpg をアップロードするか、外部URLに差し替えてください -->
+        <img class="coach-avatar" src="coach.jpg" alt="コーチ yuya" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="coach-avatar-fallback" style="display:none;width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#C9A96E,#e8c98a);flex-shrink:0;align-items:center;justify-content:center;font-size:32px;font-weight:900;color:#111;border:3px solid rgba(201,169,110,.5);">Y</div>
         <div>
           <p class="coach-name">yuya（ゆうや）</p>
-          <span class="coach-role">ボディメイクコーチ / Threads 5万フォロワー</span>
-          <p class="coach-text">2年半で63kg→84kgの増量に成功。ガリガリ体型から理想の体型に変わった経験から「続かない人が続く人になるための仕組み」を研究・実践。現在はオンラインコーチングで100名超をサポート。</p>
+          <span class="coach-role">ボディメイクコーチ / Threads 発信中</span>
+          <p class="coach-text">2年半で63kg→84kgの増量に成功。ガリガリ体型から理想の体型に変わった経験から「続かない人が続く人になるための仕組み」を研究・実践。自分自身の体で証明してきたメソッドを、今は同じ悩みを持つ人たちに伝えています。</p>
         </div>
       </div>
       <div class="stat-grid">
         <div class="stat">
-          <span class="stat-val">100<small style="font-size:15px;color:#888">名+</small></span>
-          <span class="stat-label">コーチング<br>サポート実績</span>
-        </div>
-        <div class="stat">
           <span class="stat-val">+21<small style="font-size:15px;color:#888">kg</small></span>
-          <span class="stat-label">63kg→84kg<br>増量実績</span>
-        </div>
-        <div class="stat">
-          <span class="stat-val">5<small style="font-size:15px;color:#888">万</small></span>
-          <span class="stat-label">Threads<br>フォロワー</span>
+          <span class="stat-label">63→84kgの<br>増量実績</span>
         </div>
         <div class="stat">
           <span class="stat-val">2.5<small style="font-size:15px;color:#888">年</small></span>
-          <span class="stat-label">自身の<br>変化期間</span>
+          <span class="stat-label">継続して<br>変化した期間</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val" style="font-size:clamp(18px,4.5vw,24px)">毎日<br>発信</span>
+          <span class="stat-label">Threadsで<br>ノウハウを公開中</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val" style="font-size:clamp(16px,4vw,20px)">完全<br>個別</span>
+          <span class="stat-label">コピペなし<br>マンツーマン設計</span>
         </div>
       </div>
     </div>
@@ -706,7 +743,7 @@
       <h2 class="h2">よくある<em>ご質問</em></h2>
       <div class="faq-item">
         <p class="faq-q">本当に無料ですか？後で料金が発生しませんか？</p>
-        <p class="faq-a">はい、完全無料です。セッション内で強引な営業はしません。継続サポートに興味を持ってくださった場合のみ、ご案内することがあります。</p>
+        <p class="faq-a">はい、完全無料です。セッションは60〜90分のZoom面談で、あなたの現状と目標に合わせたロードマップを一緒に作ります。</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">運動初心者でも大丈夫ですか？</p>
@@ -738,9 +775,10 @@
         無料セッションの枠は今月残りわずかです。<br>
         悩む時間が長いほど、体の変化は遠くなります。
       </p>
+      <div class="live-badge" style="margin-bottom:20px"><span class="live-dot"></span>今まさに<span id="live-count2">7</span>名が閲覧中</div>
       <a href="https://vd-official.com/?page_id=442" class="btn-line" style="margin-bottom:16px">
         今すぐ無料セッションを予約する
-        <small>Zoom / 30〜60分 / 完全無料 / 強引な営業なし</small>
+        <small>Zoom / 60〜90分 / 完全無料 / 残りわずか</small>
       </a>
       <p class="caution">
         ※ 定員に達し次第、受付を終了します<br>
@@ -757,5 +795,37 @@
     </div>
   </footer>
 
+  <script>
+    // ===== カウントダウン（月末まで） =====
+    function updateCountdown() {
+      var now = new Date();
+      var end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+      var diff = end - now;
+      if (diff < 0) return;
+      var days = Math.floor(diff / 86400000);
+      var hours = Math.floor((diff % 86400000) / 3600000);
+      var mins = Math.floor((diff % 3600000) / 60000);
+      var dEl = document.getElementById('countdown-days');
+      var dEl2 = document.getElementById('countdown-days2');
+      var hmEl = document.getElementById('countdown-hm');
+      if (dEl) dEl.textContent = days;
+      if (dEl2) dEl2.textContent = days;
+      if (hmEl) hmEl.textContent = hours + '時間 ' + mins + '分';
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+
+    // ===== 閲覧中カウンター（臨場感演出） =====
+    function randomCount() { return Math.floor(Math.random() * 5) + 5; }
+    function updateLive() {
+      var c = randomCount();
+      var el1 = document.getElementById('live-count');
+      var el2 = document.getElementById('live-count2');
+      if (el1) el1.textContent = c;
+      if (el2) el2.textContent = c;
+    }
+    updateLive();
+    setInterval(updateLive, 18000);
+  </script>
 </body>
 </html>
