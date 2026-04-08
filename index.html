@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINE登録特典｜3大特典＋無料ロードマップ作成セッション｜ボディメイクコーチング</title>
+  <meta name="description" content="LINE登録ありがとうございます。総額¥21,400相当の3大特典を今すぐお届けします。さらに無料ロードマップ作成セッション（Zoom）のご案内もあります。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== リセット & ベース ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: #0a0a0a;
+      color: #F5F5F3;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== CSS変数（page_id=442完全踏襲） ===== */
+    :root {
+      --g: #C9A96E;
+      --gd: linear-gradient(135deg, #C9A96E, #e8c98a);
+      --bk: #0a0a0a;
+      --dk: #111111;
+      --dk2: #161616;
+      --wh: #F5F5F3;
+      --line: #06C755;
+      --accent: #FF6B35;
+      --red: #e53935;
+    }
+
+    /* ===== ユーティリティ ===== */
+    .wrap { max-width: 600px; margin: 0 auto; }
+    .sec { padding: 72px 24px; }
+    .sec--dk { background: var(--dk); }
+    .sec--dk2 { background: var(--dk2); }
+    .rule { height: 1px; background: linear-gradient(90deg, transparent, var(--g), transparent); border: none; }
+    .label {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--g);
+      display: block; margin-bottom: 12px;
+    }
+    .h2 {
+      font-size: clamp(22px, 5.5vw, 32px);
+      font-weight: 900; line-height: 1.4; margin-bottom: 16px;
+    }
+    .h2 em { font-style: normal; color: var(--g); }
+    .lead { font-size: 14px; color: #aaa; line-height: 1.85; }
+
+    /* ===== スティッキーナビ ===== */
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,169,110,0.2);
+      padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .sticky-nav-logo { font-weight: 700; font-size: 13px; color: var(--g); letter-spacing: 1px; }
+    .sticky-nav-btn {
+      background: var(--line); color: #fff;
+      padding: 9px 20px; border-radius: 40px;
+      font-size: 13px; font-weight: 700;
+      transition: opacity .2s, transform .2s;
+      white-space: nowrap;
+    }
+    .sticky-nav-btn:hover { opacity: .9; transform: translateY(-1px); }
+
+    /* ===== 緊急バー ===== */
+    .urgency-bar {
+      background: var(--red);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: .3px;
+    }
+    .urgency-bar em { font-style: normal; font-size: 15px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--dk);
+      padding: 64px 24px 60px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(201,169,110,.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      border: 1px solid rgba(201,169,110,.4);
+      border-radius: 30px; padding: 5px 20px;
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      color: var(--g); text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-h1 {
+      font-size: clamp(22px, 5.5vw, 34px);
+      font-weight: 900; line-height: 1.4;
+      margin-bottom: 12px;
+    }
+    .hero-h1 strong {
+      display: block;
+      font-size: clamp(30px, 8vw, 48px);
+      background: var(--gd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2; margin-top: 6px;
+    }
+    .hero-sub {
+      font-size: 14px; color: #888; line-height: 1.9;
+      margin: 20px 0 36px;
+    }
+    .hero-value-box {
+      display: inline-flex; align-items: baseline; gap: 8px;
+      background: rgba(201,169,110,.08);
+      border: 1px solid rgba(201,169,110,.25);
+      border-radius: 10px; padding: 14px 28px;
+      margin-bottom: 36px;
+    }
+    .hero-value-label { font-size: 13px; color: #888; }
+    .hero-value-num { font-size: 34px; font-weight: 900; color: var(--g); letter-spacing: -1px; }
+    .hero-value-note { font-size: 13px; color: #888; }
+
+    /* ===== ボタン ===== */
+    .btn-line {
+      display: block; width: 100%;
+      max-width: 380px; margin: 0 auto;
+      background: var(--line); color: #fff;
+      font-size: 17px; font-weight: 700;
+      text-align: center; padding: 20px 36px;
+      border-radius: 60px;
+      box-shadow: 0 8px 32px rgba(6,199,85,.35);
+      transition: opacity .2s, transform .2s;
+      line-height: 1.4;
+    }
+    .btn-line:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(6,199,85,.45); }
+    .btn-line small {
+      display: block; font-size: 12px; font-weight: 400;
+      opacity: .85; margin-top: 4px;
+    }
+    .btn-gold {
+      display: block; width: 100%;
+      max-width: 380px; margin: 0 auto;
+      background: var(--gd); color: #111;
+      font-size: 16px; font-weight: 700;
+      text-align: center; padding: 18px 32px;
+      border-radius: 60px;
+      box-shadow: 0 8px 32px rgba(201,169,110,.30);
+      transition: opacity .2s, transform .2s;
+      line-height: 1.4;
+    }
+    .btn-gold:hover { opacity: .9; transform: translateY(-2px); }
+    .btn-gold small { display: block; font-size: 12px; font-weight: 500; margin-top: 4px; opacity: .8; }
+
+    /* ===== なぜ無料か ===== */
+    .why-text { font-size: 15px; color: #bbb; line-height: 1.95; }
+    .why-text strong { color: var(--wh); font-weight: 700; }
+    .why-text .hl { color: var(--g); font-weight: 700; }
+
+    /* ===== ボーナスカード ===== */
+    .bonus-card {
+      background: var(--dk2);
+      border: 1px solid rgba(201,169,110,.18);
+      border-radius: 16px; overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .bonus-head {
+      background: rgba(201,169,110,.07);
+      border-bottom: 1px solid rgba(201,169,110,.14);
+      padding: 22px 24px 18px;
+    }
+    .bonus-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      color: var(--g); text-transform: uppercase;
+      display: block; margin-bottom: 8px;
+    }
+    .bonus-title {
+      font-size: clamp(18px, 4.5vw, 22px);
+      font-weight: 900; color: var(--wh);
+      line-height: 1.4; margin-bottom: 12px;
+    }
+    .bonus-price { display: flex; align-items: center; gap: 12px; }
+    .bonus-price-orig { font-size: 13px; color: #555; text-decoration: line-through; }
+    .bonus-price-free {
+      font-size: 15px; font-weight: 900; color: var(--g);
+      background: rgba(201,169,110,.12);
+      border: 1px solid rgba(201,169,110,.3);
+      border-radius: 20px; padding: 3px 14px;
+    }
+    .bonus-body { padding: 24px; }
+    .bonus-desc { font-size: 14px; color: #aaa; line-height: 1.85; margin-bottom: 20px; }
+    .bonus-list { display: flex; flex-direction: column; gap: 11px; }
+    .bonus-list li {
+      font-size: 14px; color: var(--wh);
+      padding-left: 22px; position: relative; line-height: 1.6;
+    }
+    .bonus-list li::before { content: '✓'; position: absolute; left: 0; color: var(--g); font-weight: 700; }
+
+    /* ===== 合計価値 ===== */
+    .total-box {
+      background: rgba(201,169,110,.05);
+      border: 2px solid rgba(201,169,110,.30);
+      border-radius: 16px; padding: 32px 24px;
+      text-align: center;
+    }
+    .total-title {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      color: #888; margin-bottom: 20px; text-transform: uppercase;
+    }
+    .total-items { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+    .total-item {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 14px; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .total-item:last-child { border-bottom: none; }
+    .total-item-name { color: #aaa; text-align: left; flex: 1; }
+    .total-item-price { color: var(--g); font-weight: 700; white-space: nowrap; padding-left: 12px; }
+    .total-sum {
+      margin-top: 16px; padding-top: 20px;
+      border-top: 1px solid rgba(201,169,110,.28);
+    }
+    .total-sum-label { font-size: 13px; color: #888; display: block; margin-bottom: 4px; }
+    .total-sum-orig { font-size: 18px; color: #444; text-decoration: line-through; display: block; margin-bottom: 6px; }
+    .total-sum-free {
+      font-size: 40px; font-weight: 900; display: block; line-height: 1.1;
+      background: var(--gd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .total-sum-note { font-size: 12px; color: #555; margin-top: 8px; display: block; }
+
+    /* ===== セッション特典 ===== */
+    .session-box {
+      background: rgba(6,199,85,.04);
+      border: 2px solid rgba(6,199,85,.25);
+      border-radius: 16px; padding: 32px 24px;
+      text-align: center;
+    }
+    .session-badge {
+      display: inline-block;
+      background: rgba(6,199,85,.12);
+      border: 1px solid rgba(6,199,85,.35);
+      border-radius: 20px; padding: 5px 18px;
+      font-size: 12px; font-weight: 700;
+      color: var(--line); letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .session-title {
+      font-size: clamp(20px, 5.5vw, 28px);
+      font-weight: 900; color: var(--wh);
+      line-height: 1.4; margin-bottom: 16px;
+    }
+    .session-title em { font-style: normal; color: var(--line); }
+    .session-features {
+      text-align: left; margin: 20px 0 28px;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .session-feat {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 14px; color: var(--wh); line-height: 1.6;
+    }
+    .session-feat-num {
+      flex-shrink: 0; width: 26px; height: 26px;
+      background: rgba(6,199,85,.15); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; color: var(--line); font-weight: 700;
+      margin-top: 1px;
+    }
+    .session-feat-body strong { display: block; color: var(--wh); font-weight: 700; margin-bottom: 2px; }
+    .session-feat-body span { font-size: 13px; color: #888; }
+    .deadline-box {
+      background: rgba(229,57,53,.09);
+      border: 1px solid rgba(229,57,53,.28);
+      border-radius: 8px; padding: 14px 20px;
+      font-size: 13px; font-weight: 700;
+      color: #ff7070; margin-bottom: 28px; line-height: 1.55;
+    }
+    .deadline-box strong { display: block; font-size: 16px; margin-bottom: 2px; }
+
+    /* ===== コーチ ===== */
+    .coach-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: var(--dk2); border-radius: 16px; padding: 24px;
+      margin-bottom: 24px;
+    }
+    .coach-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--gd);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; font-weight: 900; color: #111;
+      flex-shrink: 0;
+      border: 2px solid rgba(201,169,110,.4);
+    }
+    .coach-name { font-size: 18px; font-weight: 900; color: var(--wh); margin-bottom: 4px; }
+    .coach-role { font-size: 12px; color: var(--g); font-weight: 700; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+    .coach-text { font-size: 13px; color: #aaa; line-height: 1.8; }
+    .stat-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat {
+      background: var(--dk2); border-radius: 12px;
+      padding: 20px 16px; text-align: center;
+      border: 1px solid rgba(201,169,110,.10);
+    }
+    .stat-val {
+      font-size: clamp(26px,6vw,34px); font-weight: 900;
+      background: var(--gd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1; display: block; margin-bottom: 4px;
+    }
+    .stat-label { font-size: 12px; color: #888; line-height: 1.5; }
+
+    /* ===== 声 ===== */
+    .voice-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px; padding: 24px;
+      margin-bottom: 16px;
+    }
+    .voice-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .voice-icon {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--gd);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 900; color: #111; flex-shrink: 0;
+    }
+    .voice-name { font-size: 14px; font-weight: 700; color: var(--wh); display: block; }
+    .voice-tag { font-size: 12px; color: var(--g); }
+    .voice-text { font-size: 14px; color: #bbb; line-height: 1.85; }
+    .voice-result {
+      display: inline-block; margin-top: 12px;
+      background: rgba(201,169,110,.09);
+      border: 1px solid rgba(201,169,110,.22);
+      border-radius: 6px; padding: 4px 12px;
+      font-size: 12px; font-weight: 700; color: var(--g);
+    }
+
+    /* ===== FAQ ===== */
+    .faq-item {
+      background: var(--dk2); border-radius: 12px;
+      padding: 20px 24px; margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,.04);
+    }
+    .faq-q {
+      font-size: 14px; font-weight: 700; color: var(--wh);
+      line-height: 1.6; margin-bottom: 10px;
+      padding-left: 28px; position: relative;
+    }
+    .faq-q::before { content: 'Q'; position: absolute; left: 0; color: var(--g); font-weight: 900; font-size: 15px; }
+    .faq-a {
+      font-size: 13px; color: #888; line-height: 1.85;
+      padding-left: 28px; position: relative;
+    }
+    .faq-a::before { content: 'A'; position: absolute; left: 0; color: var(--line); font-weight: 900; font-size: 15px; }
+
+    /* ===== 最終CTA ===== */
+    .final-sec {
+      background: radial-gradient(ellipse at 50% 0%, rgba(6,199,85,.07) 0%, transparent 55%), var(--dk);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .final-h2 { font-size: clamp(22px,5.5vw,30px); font-weight: 900; line-height: 1.45; margin-bottom: 14px; }
+    .final-h2 em { font-style: normal; color: var(--line); }
+    .final-p { font-size: 14px; color: #888; line-height: 1.9; margin-bottom: 36px; }
+    .caution { font-size: 12px; color: #444; line-height: 1.8; margin-top: 24px; }
+
+    /* ===== フッター ===== */
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 32px 24px; text-align: center;
+    }
+    footer p { font-size: 12px; color: #444; line-height: 1.8; }
+
+    /* ===== レスポンシブ ===== */
+    @media(max-width:480px){
+      .sec { padding: 56px 20px; }
+      .hero { padding: 52px 20px 48px; }
+      .stat-grid { gap: 10px; }
+      .coach-card { flex-direction: column; align-items: center; text-align: center; }
+      .sticky-nav-logo { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== スティッキーナビ ===== -->
+  <nav class="sticky-nav">
+    <span class="sticky-nav-logo">BODYMAKE COACHING</span>
+    <a href="https://vd-official.com/?page_id=442" class="sticky-nav-btn">無料セッションを予約</a>
+  </nav>
+
+  <!-- ===== 緊急バー ===== -->
+  <div class="urgency-bar">⚠ 特典配布・無料セッション受付は<em>今月末</em>まで ／ 残り枠 <em>数名</em></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <span class="hero-tag">Special Tokuten</span>
+    <h1 class="hero-h1">
+      LINE登録ありがとうございます
+      <strong>3大特典を<br>今すぐお届けします</strong>
+    </h1>
+    <p class="hero-sub">
+      何度やっても続かなかったボディメイクが<br>
+      仕組みを変えるだけで「続く人」に変わる。<br>
+      その3つのツールを全部、無料でお渡しします。
+    </p>
+    <div class="hero-value-box">
+      <span class="hero-value-label">総額</span>
+      <span class="hero-value-num">¥21,400</span>
+      <span class="hero-value-note">相当を無料プレゼント</span>
+    </div>
+    <a href="https://vd-official.com/?page_id=442" class="btn-line">
+      今すぐ無料セッションを予約する
+      <small>→ 特典受取 ＋ 無料Zoom30分</small>
+    </a>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== なぜ無料か ===== -->
+  <section class="sec sec--dk">
+    <div class="wrap">
+      <span class="label">Why Free</span>
+      <h2 class="h2">なぜ無料で<em>渡すのか</em></h2>
+      <p class="why-text">
+        正直に言います。ダイエットや筋トレの情報は、もう十分にネットにあります。<br><br>
+        それでも結果が出ない人が多いのは、<strong>「情報」ではなく「仕組みと伴走」が足りないから</strong>です。<br><br>
+        この3つの特典は、僕が2年半で<span class="hl">63kg → 84kg</span>に変わった過程で本当に効いた手法を、誰でも使えるように体系化したもの。<br><br>
+        まずは使ってみてください。そして、もし「もっと本気でやりたい」と思ったときだけ、無料セッションに来てください。
+      </p>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== BONUS 1 ===== -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="label">Bonus 01</span>
+      <div class="bonus-card">
+        <div class="bonus-head">
+          <span class="bonus-num">Bonus 01</span>
+          <h3 class="bonus-title">挫折しない3ヶ月<br>ボディメイク完全ロードマップ</h3>
+          <div class="bonus-price">
+            <span class="bonus-price-orig">通常 ¥9,800</span>
+            <span class="bonus-price-free">→ 無料</span>
+          </div>
+        </div>
+        <div class="bonus-body">
+          <p class="bonus-desc">「何から始めればいいかわからない」を解決する、3ヶ月の完全設計図。食事・運動・睡眠をどの順番で、どの強度でやるか。週ごとのチェックポイント付き。</p>
+          <ul class="bonus-list">
+            <li>Week 1〜4：基礎代謝を守りながら脂肪だけ落とす食事設計</li>
+            <li>Week 5〜8：筋肉をつけながら維持するトレーニング頻度</li>
+            <li>Week 9〜12：停滞期の突破プロトコルと最終仕上げ</li>
+            <li>毎週の「続いているか」チェック指標付き</li>
+            <li>崩れたときの72時間リカバリー手順</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== BONUS 2 ===== -->
+  <section class="sec sec--dk">
+    <div class="wrap">
+      <span class="label">Bonus 02</span>
+      <div class="bonus-card">
+        <div class="bonus-head">
+          <span class="bonus-num">Bonus 02</span>
+          <h3 class="bonus-title">4タイプ別<br>挫折パターン脱出シート</h3>
+          <div class="bonus-price">
+            <span class="bonus-price-orig">通常 ¥7,800</span>
+            <span class="bonus-price-free">→ 無料</span>
+          </div>
+        </div>
+        <div class="bonus-body">
+          <p class="bonus-desc">なぜ続かないのかは、人によってパターンが違います。あなたのタイプを特定して、そのタイプ専用の脱出方法を実行するだけで、同じ人間が180度変わります。</p>
+          <ul class="bonus-list">
+            <li>タイプA：3週間の壁（ゴール設定の問題）→ 解決策</li>
+            <li>タイプB：週末崩れ・月曜リセット（完璧主義）→ 解決策</li>
+            <li>タイプC：そもそも始められない（ハードル設計）→ 解決策</li>
+            <li>タイプD：続いても変わらない（優先順位の問題）→ 解決策</li>
+            <li>自己診断チェックシート付き（3分で判定）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== BONUS 3 ===== -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="label">Bonus 03</span>
+      <div class="bonus-card">
+        <div class="bonus-head">
+          <span class="bonus-num">Bonus 03</span>
+          <h3 class="bonus-title">ズボラでも続く<br>食事管理テンプレート（7日分）</h3>
+          <div class="bonus-price">
+            <span class="bonus-price-orig">通常 ¥3,800</span>
+            <span class="bonus-price-free">→ 無料</span>
+          </div>
+        </div>
+        <div class="bonus-body">
+          <p class="bonus-desc">カロリー計算も食品スケールも不要。「これを食べればいい」という7日分の献立テンプレート。コンビニ対応・外食対応・忙しい平日対応の3パターン収録。</p>
+          <ul class="bonus-list">
+            <li>自炊パターン：7日分の朝昼夜メニュー表</li>
+            <li>コンビニパターン：商品名指定で即使えるリスト</li>
+            <li>外食パターン：チェーン店別の最適メニュー選択肢</li>
+            <li>PFCバランス（タンパク・脂質・炭水化物）の比率設計済み</li>
+            <li>「飲み会の前後」リカバリー食事プラン付き</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== 合計価値 ===== -->
+  <section class="sec sec--dk">
+    <div class="wrap">
+      <span class="label">Total Value</span>
+      <h2 class="h2">特典の<em>合計価値</em></h2>
+      <div class="total-box">
+        <p class="total-title">今回お渡しする特典一覧</p>
+        <div class="total-items">
+          <div class="total-item">
+            <span class="total-item-name">【特典①】3ヶ月ボディメイクロードマップ</span>
+            <span class="total-item-price">¥9,800</span>
+          </div>
+          <div class="total-item">
+            <span class="total-item-name">【特典②】4タイプ別挫折脱出シート</span>
+            <span class="total-item-price">¥7,800</span>
+          </div>
+          <div class="total-item">
+            <span class="total-item-name">【特典③】7日分食事管理テンプレート</span>
+            <span class="total-item-price">¥3,800</span>
+          </div>
+        </div>
+        <div class="total-sum">
+          <span class="total-sum-label">通常合計</span>
+          <span class="total-sum-orig">¥21,400</span>
+          <span class="total-sum-free">→ 完全無料</span>
+          <span class="total-sum-note">※ LINE登録者限定・今月末まで</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== 追加特典：体験セッション ===== -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="label">Additional Bonus</span>
+      <h2 class="h2"><em>追加特典</em>：<br>無料ロードマップ作成セッション</h2>
+      <p class="lead" style="margin-bottom:28px">上記3つの特典に加え、今だけ「あなた専用のロードマップ作成セッション（Zoom・30〜60分）」も無料でご提供します。</p>
+      <div class="session-box">
+        <span class="session-badge">Limited Free Session</span>
+        <h3 class="session-title">
+          無料<em>ロードマップ</em><br>作成セッション
+        </h3>
+        <ul class="session-features">
+          <li class="session-feat">
+            <span class="session-feat-num">1</span>
+            <div class="session-feat-body">
+              <strong>失敗パターンの特定（15分）</strong>
+              <span>あなたが続かない本当の原因を会話の中で特定します</span>
+            </div>
+          </li>
+          <li class="session-feat">
+            <span class="session-feat-num">2</span>
+            <div class="session-feat-body">
+              <strong>3ヶ月ロードマップの設計（20分）</strong>
+              <span>目標・現状・生活スタイルに合わせた完全個別プランを作成</span>
+            </div>
+          </li>
+          <li class="session-feat">
+            <span class="session-feat-num">3</span>
+            <div class="session-feat-body">
+              <strong>最初の1週間アクション（10分）</strong>
+              <span>セッション翌日から動けるレベルまで具体化してお渡し</span>
+            </div>
+          </li>
+          <li class="session-feat">
+            <span class="session-feat-num">4</span>
+            <div class="session-feat-body">
+              <strong>強引な営業は一切なし</strong>
+              <span>断れない空気は作りません。変化をサポートしたいだけです</span>
+            </div>
+          </li>
+        </ul>
+        <div class="deadline-box">
+          <strong>⏰ 申込受付：今月末まで</strong>
+          今月の枠は残りわずかです。定員に達し次第、受付を終了します。
+        </div>
+        <a href="https://vd-official.com/?page_id=442" class="btn-line">
+          無料セッションを予約する（残り数名）
+          <small>Zoom / 30〜60分 / 完全無料</small>
+        </a>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== コーチ紹介 ===== -->
+  <section class="sec sec--dk">
+    <div class="wrap">
+      <span class="label">About Coach</span>
+      <h2 class="h2">担当コーチ<em>について</em></h2>
+      <div class="coach-card">
+        <div class="coach-avatar">Y</div>
+        <div>
+          <p class="coach-name">yuya（ゆうや）</p>
+          <span class="coach-role">ボディメイクコーチ / Threads 5万フォロワー</span>
+          <p class="coach-text">2年半で63kg→84kgの増量に成功。ガリガリ体型から理想の体型に変わった経験から「続かない人が続く人になるための仕組み」を研究・実践。現在はオンラインコーチングで100名超をサポート。</p>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="stat-val">100<small style="font-size:15px;color:#888">名+</small></span>
+          <span class="stat-label">コーチング<br>サポート実績</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">+21<small style="font-size:15px;color:#888">kg</small></span>
+          <span class="stat-label">63kg→84kg<br>増量実績</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">5<small style="font-size:15px;color:#888">万</small></span>
+          <span class="stat-label">Threads<br>フォロワー</span>
+        </div>
+        <div class="stat">
+          <span class="stat-val">2.5<small style="font-size:15px;color:#888">年</small></span>
+          <span class="stat-label">自身の<br>変化期間</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== お客様の声 ===== -->
+  <section class="sec">
+    <div class="wrap">
+      <span class="label">Voice</span>
+      <h2 class="h2">セッション後の<em>変化</em></h2>
+      <div class="voice-card">
+        <div class="voice-head">
+          <div class="voice-icon">T</div>
+          <div>
+            <span class="voice-name">T.Sさん（30代・男性）</span>
+            <span class="voice-tag">体重 -8kg / 3ヶ月</span>
+          </div>
+        </div>
+        <p class="voice-text">正直、また同じことになるだろうと思っていました。でもセッションで自分の「週末崩れ」のパターンを指摘されたとき、「あ、これが原因だったのか」と。具体的な対策を教えてもらって、初めて3ヶ月続きました。</p>
+        <span class="voice-result">→ 3ヶ月で -8kg 達成</span>
+      </div>
+      <div class="voice-card">
+        <div class="voice-head">
+          <div class="voice-icon">K</div>
+          <div>
+            <span class="voice-name">K.Mさん（20代・女性）</span>
+            <span class="voice-tag">体型 引き締め達成 / 2ヶ月</span>
+          </div>
+        </div>
+        <p class="voice-text">食事管理がどうしても続かなくて困っていたのですが、「食べていいもの一覧」を作ってもらってから楽になりました。難しいことを何もしなくていいのに体が変わっていくのが不思議でした。</p>
+        <span class="voice-result">→ 2ヶ月で理想のラインに</span>
+      </div>
+      <div class="voice-card">
+        <div class="voice-head">
+          <div class="voice-icon">R</div>
+          <div>
+            <span class="voice-name">R.Nさん（30代・男性）</span>
+            <span class="voice-tag">筋肉量 +4kg / 4ヶ月</span>
+          </div>
+        </div>
+        <p class="voice-text">何年も「いつかやろう」だったのが、セッションで具体的な最初の一歩を決めたら動けました。一人だと絶対続かなかったと思います。伴走してくれる人がいるだけでこんなに違うのかと。</p>
+        <span class="voice-result">→ 4ヶ月で筋肉量 +4kg</span>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== FAQ ===== -->
+  <section class="sec sec--dk">
+    <div class="wrap">
+      <span class="label">FAQ</span>
+      <h2 class="h2">よくある<em>ご質問</em></h2>
+      <div class="faq-item">
+        <p class="faq-q">本当に無料ですか？後で料金が発生しませんか？</p>
+        <p class="faq-a">はい、完全無料です。セッション内で強引な営業はしません。継続サポートに興味を持ってくださった場合のみ、ご案内することがあります。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">運動初心者でも大丈夫ですか？</p>
+        <p class="faq-a">はい、むしろ初心者の方こそ効果が出やすいです。最初から正しい仕組みで始めることで、無駄な遠回りをしないで済みます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">過去に何度も失敗しています。今回も同じになりませんか？</p>
+        <p class="faq-a">過去の失敗は「意志」ではなく「仕組み」の問題です。セッションで失敗パターンを特定し、それを回避する設計をします。同じやり方を繰り返さないから、結果が変わります。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">特典はいつ受け取れますか？</p>
+        <p class="faq-a">無料セッションのご予約後、確認連絡の中でお届けします。セッション前にお読みいただくことで、セッションの効果が高まります。</p>
+      </div>
+    </div>
+  </section>
+  <hr class="rule">
+
+  <!-- ===== 最終CTA ===== -->
+  <section class="final-sec">
+    <div class="wrap">
+      <span class="label">Final CTA</span>
+      <h2 class="final-h2">
+        「また失敗するかも」が<br>
+        <em>「今度こそ変われる」</em>に変わる
+      </h2>
+      <p class="final-p">
+        変わった人と変われなかった人の差は、才能でも遺伝でもありません。<br>
+        「正しい仕組みがあったか」「一緒にやる人がいたか」、それだけです。<br><br>
+        無料セッションの枠は今月残りわずかです。<br>
+        悩む時間が長いほど、体の変化は遠くなります。
+      </p>
+      <a href="https://vd-official.com/?page_id=442" class="btn-line" style="margin-bottom:16px">
+        今すぐ無料セッションを予約する
+        <small>Zoom / 30〜60分 / 完全無料 / 強引な営業なし</small>
+      </a>
+      <p class="caution">
+        ※ 定員に達し次第、受付を終了します<br>
+        ※ 当ページの特典は予告なく終了する場合があります<br>
+        ※ 個人の感想であり、効果・効能を保証するものではありません
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer>
+    <div class="wrap">
+      <p>ボディメイクコーチング by yuya<br>© 2026 All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
